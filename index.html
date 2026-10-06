@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f5f0">
-  <title>包包台南小旅行</title>
+  <title>哆啦A夢人物介紹</title>
   <style>
     * { box-sizing: border-box; }
     html { color-scheme: light; scroll-behavior: smooth; }
@@ -13,18 +13,25 @@
     header.hero-cover { position: relative; min-height: 310px; margin-bottom: 22px; overflow: hidden; isolation: isolate; border-radius: 8px 32px; background: #ead8c3; }
     .hero-cover > img { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 56%; }
     .hero-copy { display: flex; min-height: inherit; flex-direction: column; align-items: flex-start; justify-content: center; padding: 30px 34px; background: linear-gradient(90deg, rgb(247 245 240 / 98%) 0%, rgb(247 245 240 / 86%) 38%, rgb(247 245 240 / 22%) 72%, transparent 100%); }
-    .eyebrow, .section-kicker { margin: 0 0 8px; color: #a14d37; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow, .section-kicker { margin: 0 0 8px; color: #2677a5; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
     h1 { max-width: 62%; margin: 0; font-size: clamp(36px, 8vw, 66px); font-weight: 700; line-height: 1.15; letter-spacing: -.055em; }
     .header-note { margin: 10px 0 0; color: #62645e; font-size: 16px; }
     .notice { margin: 18px 2px 0; color: #77766f; font-size: 14px; }
     section { margin-top: 48px; }
     h2 { margin: 0; font-size: clamp(30px, 7vw, 44px); font-weight: 700; line-height: 1.25; letter-spacing: -.045em; }
-    .preparation { margin-top: 0; padding: 22px 20px; border: 1px solid #e9e3d8; border-radius: 8px 28px 8px 28px; background: #fffefa; box-shadow: 0 12px 32px rgb(47 43 34 / 5%); }
-    .preparation h2 { margin-bottom: 14px; }
-    .preparation dl { margin: 0; }
-    .preparation dl > div { padding: 12px 0; border-top: 1px solid #ece9e1; }
-    .preparation dt { color: #77766f; font-size: 15px; font-weight: 600; }
-    .preparation dd { margin: 2px 0 0; font-size: 19px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+    .character-overview { margin-top: 0; padding: 22px 20px; border: 1px solid #e9e3d8; border-radius: 8px 28px 8px 28px; background: #fffefa; box-shadow: 0 12px 32px rgb(47 43 34 / 5%); }
+    .character-overview h2 { margin-bottom: 14px; }
+    .character-overview dl { margin: 0; }
+    .character-overview dl > div { padding: 12px 0; border-top: 1px solid #ece9e1; }
+    .character-overview dt { color: #77766f; font-size: 15px; font-weight: 600; }
+    .character-overview dd { margin: 2px 0 0; font-size: 19px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+    .character-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .character-card { min-width: 0; padding: 20px; border: 1px solid #e7e9e5; border-radius: 6px 20px 6px 20px; background: #fffefa; box-shadow: 0 8px 24px rgb(47 43 34 / 4%); }
+    .character-card-heading { display: flex; align-items: center; gap: 12px; }
+    .character-index { display: grid; width: 38px; height: 38px; flex: 0 0 38px; place-items: center; border: 1px solid #c9dfe9; border-radius: 50%; background: #eef7fb; color: #2677a5; font-size: 12px; font-weight: 700; }
+    .character-card h3 { margin: 0; font-size: 23px; }
+    .character-card p { margin: 12px 0 0; color: #62645e; font-size: 16px; line-height: 1.65; }
+    .character-card .character-fact { padding-top: 12px; border-top: 1px solid #ece9e1; color: #2677a5; font-size: 14px; font-weight: 600; }
     .day-heading { display: flex; align-items: center; gap: 14px; }
     .day-number { display: grid; width: 52px; height: 52px; flex: 0 0 52px; place-items: center; border: 1px solid #c88a73; border-radius: 50%; color: #a14d37; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
     .subtitle { margin: 10px 0 22px; color: #62645e; font-size: 16px; }
@@ -44,88 +51,67 @@
     li p { margin: 0; color: #62645e; font-size: 16px; line-height: 1.6; }
     footer { margin-top: 38px; padding: 20px 2px 0; border-top: 1px solid #ded7cb; color: #77766f; font-size: 15px; }
     @media (max-width: 599px) { header.hero-cover { min-height: 270px; border-radius: 8px 26px; } .hero-copy { padding: 24px 22px; background: linear-gradient(90deg, rgb(247 245 240 / 98%) 0%, rgb(247 245 240 / 88%) 52%, rgb(247 245 240 / 38%) 80%, rgb(247 245 240 / 12%) 100%); } h1 { max-width: 76%; font-size: clamp(32px, 10vw, 44px); } .hero-cover .header-note { max-width: 78%; } }
-    @media (min-width: 600px) { main { padding: 44px 34px 76px; } header.hero-cover { min-height: 360px; margin-bottom: 30px; } .hero-copy { padding: 42px 48px; } .preparation { padding: 30px 36px; } .preparation dl > div { display: grid; grid-template-columns: 140px 1fr; gap: 20px; padding: 17px 0; } .preparation dd { margin: 0; font-size: 21px; } section { margin-top: 64px; } ol { padding-left: 46px; } ol::before { left: 15px; } ol > li { padding: 24px 26px; } ol > li:not(.timeline-gap)::before { left: -39px; } ol > li:not(.timeline-gap)::after { top: 22px; right: 22px; } .timeline-gap { padding-left: 14px; } .timeline-gap::before { left: -35px; } li p { font-size: 18px; } }
+    @media (min-width: 600px) { main { padding: 44px 34px 76px; } header.hero-cover { min-height: 360px; margin-bottom: 30px; } .hero-copy { padding: 42px 48px; } .character-overview { padding: 30px 36px; } .character-overview dl > div { display: grid; grid-template-columns: 140px 1fr; gap: 20px; padding: 17px 0; } .character-overview dd { margin: 0; font-size: 21px; } section { margin-top: 64px; } .character-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } .character-card { padding: 24px; } .character-card p { font-size: 17px; } ol { padding-left: 46px; } ol::before { left: 15px; } ol > li { padding: 24px 26px; } ol > li:not(.timeline-gap)::before { left: -39px; } ol > li:not(.timeline-gap)::after { top: 22px; right: 22px; } .timeline-gap { padding-left: 14px; } .timeline-gap::before { left: -35px; } li p { font-size: 18px; } }
   </style>
 </head>
 <body>
   <main>
     <header class="hero-cover">
-      <img src="images/cover.webp" alt="台南港邊夕陽與牛肉湯" width="1600" height="900" fetchpriority="high">
+      <img src="images/cover.webp" alt="哆啦A夢與大雄、靜香、胖虎、小夫和哆啦美在公園裡" width="1600" height="900" fetchpriority="high">
       <div class="hero-copy">
-        <p class="eyebrow">TAIWAN · TAINAN / 02 DAYS</p>
-        <h1>包包台南小旅行</h1>
-        <p class="header-note">巷弄散步、在地好味與慢步調的兩日旅程</p>
+        <p class="eyebrow">CHARACTER GUIDE · DORAEMON</p>
+        <h1>哆啦A夢人物介紹</h1>
+        <p class="header-note">認識哆啦A夢和他最親密的夥伴們</p>
       </div>
     </header>
-    <section class="preparation" aria-labelledby="trip-reminders">
-      <h2 id="trip-reminders">行前準備</h2>
+    <section class="character-overview" aria-labelledby="character-overview-title">
+      <h2 id="character-overview-title">主角小檔案</h2>
       <dl>
-        <div><dt>天氣</dt><dd>晴時多雲，約 25–30°C（示意）</dd></div>
-        <div><dt>要帶的東西</dt><dd>水壺、雨傘、防曬用品、健保卡、好走的鞋（示意）</dd></div>
-        <div><dt>集合時間</dt><dd>第一天 08:30，台南火車站集合（示意）</dd></div>
-        <div><dt>集合地點</dt><dd>台南火車站（示意）</dd></div>
+        <div><dt>身份</dt><dd>來自 22 世紀的貓型機器人</dd></div>
+        <div><dt>生日</dt><dd>2112 年 9 月 3 日</dd></div>
+        <div><dt>最喜歡</dt><dd>銅鑼燒</dd></div>
+        <div><dt>最怕</dt><dd>老鼠</dd></div>
       </dl>
     </section>
-    <p class="notice">行程草稿：時間、店名、地點與天氣皆為示意，正式安排待確認。</p>
-    <section aria-labelledby="day-one">
-      <div class="day-heading"><span class="day-number" aria-hidden="true">DAY 01</span><h2 id="day-one">第一天</h2></div>
-      <p class="subtitle">早餐出發 → 老街散步 → 午後休息 → 晚餐入住</p>
-      <ol>
-        <li>
-          <time datetime="09:00">09:00</time>
-          <h3>巷口早餐店（示意）</h3>
-          <p>先吃一頓暖暖的在地早餐，集合後再一起出發。</p>
-        </li>
-        <li class="timeline-gap" aria-label="移動與彈性時間，分鐘待實際地點確認"><span>移動與彈性時間</span><small>分鐘待實際地點確認</small></li>
-        <li>
-          <time datetime="11:00">11:00</time>
-          <h3>老街散步區（示意）</h3>
-          <p>沿著老屋與小巷慢慢走，看到喜歡的角落就停下拍照。</p>
-        </li>
-        <li class="timeline-gap" aria-label="移動與彈性時間，分鐘待實際地點確認"><span>移動與彈性時間</span><small>分鐘待實際地點確認</small></li>
-        <li>
-          <time datetime="14:30">14:30</time>
-          <h3>午後咖啡店（示意）</h3>
-          <p>找個舒服的位置喝飲料、吃甜點，休息一下再繼續逛。</p>
-        </li>
-        <li class="timeline-gap" aria-label="移動與彈性時間，分鐘待實際地點確認"><span>移動與彈性時間</span><small>分鐘待實際地點確認</small></li>
-        <li>
-          <time datetime="18:00">18:00</time>
-          <h3>小吃晚餐街／住宿點（示意）</h3>
-          <p>一起分享幾樣小吃當晚餐，吃飽後回住宿點辦理入住。</p>
-        </li>
-      </ol>
+    <p class="notice">角色簡介依官方人物設定整理，描述以動畫常見形象為主。</p>
+    <section aria-labelledby="friends-title">
+      <p class="eyebrow">THE FRIENDS</p>
+      <h2 id="friends-title">哆啦A夢的夥伴們</h2>
+      <p class="subtitle">性格各不相同，總在日常冒險裡彼此陪伴。</p>
+      <div class="character-grid">
+        <article class="character-card">
+          <div class="character-card-heading"><span class="character-index">01</span><h3>哆啦A夢</h3></div>
+          <p>來自 22 世紀的貓型機器人，帶著四次元口袋來幫助大雄。他有時粗心，卻總是努力守護朋友。</p>
+          <p class="character-fact">最愛銅鑼燒，也最怕老鼠</p>
+        </article>
+        <article class="character-card">
+          <div class="character-card-heading"><span class="character-index">02</span><h3>野比大雄</h3></div>
+          <p>有點迷糊的小學生，不擅長讀書和運動；遇到朋友受苦時，卻有一顆體貼又善良的心。</p>
+          <p class="character-fact">善良、富有同理心</p>
+        </article>
+        <article class="character-card">
+          <div class="character-card-heading"><span class="character-index">03</span><h3>源靜香</h3></div>
+          <p>大雄的同學，做事細心、認真又有主見，常以溫柔的方式關心身邊的朋友。</p>
+          <p class="character-fact">大家信賴的好朋友</p>
+        </article>
+        <article class="character-card">
+          <div class="character-card-heading"><span class="character-index">04</span><h3>剛田武（胖虎）</h3></div>
+          <p>精力充沛的孩子王，雖然有時霸道，卻很重視友情，也十分疼愛妹妹小珠。</p>
+          <p class="character-fact">夢想成為歌手</p>
+        </article>
+        <article class="character-card">
+          <div class="character-card-heading"><span class="character-index">05</span><h3>骨川小夫</h3></div>
+          <p>口才很好、手很巧，喜歡分享新奇玩具，也熱衷於模型和各種收藏。</p>
+          <p class="character-fact">擅長模型與手作</p>
+        </article>
+        <article class="character-card">
+          <div class="character-card-heading"><span class="character-index">06</span><h3>哆啦美</h3></div>
+          <p>哆啦A夢的妹妹，個性可靠又能幹；哥哥遇到麻煩時，她總會帶著道具來幫忙。</p>
+          <p class="character-fact">最喜歡蜜瓜包</p>
+        </article>
+      </div>
     </section>
-    <section aria-labelledby="day-two">
-      <div class="day-heading"><span class="day-number" aria-hidden="true">DAY 02</span><h2 id="day-two">第二天</h2></div>
-      <p class="subtitle">悠閒早餐 → 街區走逛 → 午餐 → 伴手禮返程</p>
-      <ol>
-        <li>
-          <time datetime="09:00">09:00</time>
-          <h3>早安食堂（示意）</h3>
-          <p>睡飽後吃早餐，整理行李並確認退房安排。</p>
-        </li>
-        <li class="timeline-gap" aria-label="移動與彈性時間，分鐘待實際地點確認"><span>移動與彈性時間</span><small>分鐘待實際地點確認</small></li>
-        <li>
-          <time datetime="10:30">10:30</time>
-          <h3>歷史街區（示意）</h3>
-          <p>逛逛街區與特色小店，感受台南的日常風景。</p>
-        </li>
-        <li class="timeline-gap" aria-label="移動與彈性時間，分鐘待實際地點確認"><span>移動與彈性時間</span><small>分鐘待實際地點確認</small></li>
-        <li>
-          <time datetime="12:30">12:30</time>
-          <h3>家常午餐店（示意）</h3>
-          <p>用一頓輕鬆的午餐補充體力，聊聊這趟最喜歡的一站。</p>
-        </li>
-        <li class="timeline-gap" aria-label="移動與彈性時間，分鐘待實際地點確認"><span>移動與彈性時間</span><small>分鐘待實際地點確認</small></li>
-        <li>
-          <time datetime="14:30">14:30</time>
-          <h3>伴手禮小舖／返程集合點（示意）</h3>
-          <p>挑幾樣喜歡的伴手禮，拿好行李後集合返程。</p>
-        </li>
-      </ol>
-    </section>
-    <footer>出門小提醒：帶水、穿好走的鞋；實際行程可依天氣與大家的步調調整。</footer>
+    <footer>角色簡介參考：<a href="https://www.tv-asahi.co.jp/doraemon/character/" target="_blank" rel="noreferrer">哆啦A夢與夥伴們｜朝日電視台</a></footer>
   </main>
 </body>
 </html>
