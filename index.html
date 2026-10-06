@@ -3,45 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f5f7">
+  <meta name="theme-color" content="#f7f5f0">
   <title>包包台南小旅行</title>
   <style>
     * { box-sizing: border-box; }
-    html { color-scheme: light; }
-    body { margin: 0; background: #f5f5f7; color: #1d1d1f; font-family: -apple-system, BlinkMacSystemFont, "SF Pro TC", "Helvetica Neue", "Segoe UI", "Microsoft JhengHei", sans-serif; font-size: 22px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    main { max-width: 880px; margin: auto; padding: 24px 20px 64px; }
-    header { margin-bottom: 22px; }
-    h1 { margin: 0; font-size: clamp(30px, 7.8vw, 60px); font-weight: 700; line-height: 1.2; letter-spacing: -.035em; }
-    .notice { margin: 22px 0 0; font-size: 18px; color: #626267; }
-    section { margin-top: 56px; }
-    h2 { margin: 0; font-size: clamp(32px, 6vw, 44px); font-weight: 700; line-height: 1.25; letter-spacing: -.025em; }
-    .preparation { margin-top: 0; padding: 24px 20px; background: #fff; border-radius: 24px; }
-    .preparation h2 { margin-bottom: 18px; }
+    html { color-scheme: light; scroll-behavior: smooth; }
+    body { margin: 0; background: #f7f5f0; color: #20231f; font-family: -apple-system, BlinkMacSystemFont, "SF Pro TC", "Helvetica Neue", "Segoe UI", "Microsoft JhengHei", sans-serif; font-size: 20px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    main { width: min(100%, 900px); margin: auto; padding: 22px 18px 56px; }
+    header { margin-bottom: 22px; padding: 12px 2px 8px; }
+    .eyebrow, .section-kicker { margin: 0 0 8px; color: #a14d37; font-size: 13px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(36px, 9vw, 66px); font-weight: 700; line-height: 1.15; letter-spacing: -.055em; }
+    .header-note { margin: 10px 0 0; color: #62645e; font-size: 16px; }
+    .notice { margin: 18px 2px 0; color: #77766f; font-size: 14px; }
+    section { margin-top: 48px; }
+    h2 { margin: 0; font-size: clamp(30px, 7vw, 44px); font-weight: 700; line-height: 1.25; letter-spacing: -.045em; }
+    .preparation { margin-top: 0; padding: 22px 20px; border: 1px solid #e9e3d8; border-radius: 8px 28px 8px 28px; background: #fffefa; box-shadow: 0 12px 32px rgb(47 43 34 / 5%); }
+    .preparation h2 { margin-bottom: 14px; }
     .preparation dl { margin: 0; }
-    .preparation dl > div { padding: 14px 0; border-top: 1px solid #e5e5e7; }
-    .preparation dt { font-size: 20px; font-weight: 600; color: #626267; }
-    .preparation dd { margin: 4px 0 0; font-size: 23px; font-weight: 500; line-height: 1.45; overflow-wrap: anywhere; }
-    .subtitle { margin: 12px 0 24px; font-size: 20px; color: #626267; }
-    ol { position: relative; list-style: none; margin: 24px 0 0; padding: 0 0 0 48px; }
-    ol::before { position: absolute; top: 16px; bottom: 16px; left: 16px; width: 2px; background: #d2d2d7; content: ""; }
-    ol > li { position: relative; margin: 0 0 14px; padding: 20px 18px; border-radius: 20px; background: #fff; }
+    .preparation dl > div { padding: 12px 0; border-top: 1px solid #ece9e1; }
+    .preparation dt { color: #77766f; font-size: 15px; font-weight: 600; }
+    .preparation dd { margin: 2px 0 0; font-size: 19px; font-weight: 600; line-height: 1.5; overflow-wrap: anywhere; }
+    .day-heading { display: flex; align-items: center; gap: 14px; }
+    .day-number { display: grid; width: 52px; height: 52px; flex: 0 0 52px; place-items: center; border: 1px solid #c88a73; border-radius: 50%; color: #a14d37; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+    .subtitle { margin: 10px 0 22px; color: #62645e; font-size: 16px; }
+    ol { position: relative; list-style: none; margin: 0; padding: 0 0 0 34px; counter-reset: stops; }
+    ol::before { position: absolute; top: 18px; bottom: 22px; left: 11px; width: 1px; background: #d9cfc1; content: ""; }
+    ol > li { position: relative; margin: 0 0 12px; padding: 18px 16px; border: 1px solid #eee9df; border-radius: 6px 20px 6px 20px; background: #fffefa; box-shadow: 0 8px 24px rgb(47 43 34 / 4%); }
     ol > li:last-child { margin-bottom: 0; }
-    ol > li:not(.timeline-gap)::before { position: absolute; top: 28px; left: -39px; width: 16px; height: 16px; border: 4px solid #f5f5f7; border-radius: 50%; background: #0066cc; box-shadow: 0 0 0 2px #0066cc; content: ""; }
-    ol > .timeline-gap { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 8px 12px 12px; background: transparent; color: #626267; font-size: 16px; line-height: 1.45; }
-    .timeline-gap::before { position: absolute; top: 14px; left: -36px; width: 10px; height: 10px; border: 2px solid #929298; border-radius: 50%; background: #f5f5f7; content: ""; }
+    ol > li:not(.timeline-gap) { counter-increment: stops; }
+    ol > li:not(.timeline-gap)::before { position: absolute; top: 23px; left: -30px; width: 13px; height: 13px; border: 3px solid #f7f5f0; border-radius: 50%; background: #a14d37; box-shadow: 0 0 0 1px #a14d37; content: ""; }
+    ol > li:not(.timeline-gap)::after { position: absolute; top: 18px; right: 14px; color: #b6a998; content: "0" counter(stops); font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+    ol > .timeline-gap { display: flex; flex-direction: column; gap: 1px; margin: 0; padding: 8px 8px 12px; border: 0; background: transparent; box-shadow: none; color: #77766f; font-size: 14px; line-height: 1.45; }
+    .timeline-gap::before { position: absolute; top: 13px; left: -27px; width: 8px; height: 8px; border: 1px solid #b6a998; border-radius: 50%; background: #f7f5f0; content: ""; }
     .timeline-gap span { font-weight: 600; }
-    .timeline-gap small { font-size: 14px; }
-    time { display: inline-block; color: #0066cc; font-size: 26px; font-weight: 600; font-variant-numeric: tabular-nums; }
-    h3 { margin: 8px 0; font-size: 27px; line-height: 1.4; font-weight: 600; letter-spacing: -.02em; }
-    li p { margin: 0; color: #626267; }
-    footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid #d2d2d7; font-size: 18px; color: #626267; }
-    @media (min-width: 600px) { main { padding: 48px 32px 80px; } header { margin-bottom: 32px; } .preparation { padding: 32px 36px; } .preparation dl > div { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 20px 0; } .preparation dd { margin: 0; font-size: 26px; } ol { padding-left: 56px; } ol > li { padding: 26px 28px; } ol > li:not(.timeline-gap)::before { left: -47px; } .timeline-gap { padding-left: 14px; } .timeline-gap::before { left: -44px; } }
+    .timeline-gap small { font-size: 12px; }
+    time { display: inline-block; padding: 2px 9px; border-radius: 999px; background: #f5ece5; color: #984a35; font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: .03em; }
+    h3 { margin: 9px 36px 5px 0; font-size: clamp(21px, 5.8vw, 27px); line-height: 1.4; font-weight: 650; letter-spacing: -.035em; }
+    li p { margin: 0; color: #62645e; font-size: 16px; line-height: 1.6; }
+    footer { margin-top: 38px; padding: 20px 2px 0; border-top: 1px solid #ded7cb; color: #77766f; font-size: 15px; }
+    @media (min-width: 600px) { main { padding: 44px 34px 76px; } header { margin-bottom: 30px; } .preparation { padding: 30px 36px; } .preparation dl > div { display: grid; grid-template-columns: 140px 1fr; gap: 20px; padding: 17px 0; } .preparation dd { margin: 0; font-size: 21px; } section { margin-top: 64px; } ol { padding-left: 46px; } ol::before { left: 15px; } ol > li { padding: 24px 26px; } ol > li:not(.timeline-gap)::before { left: -39px; } ol > li:not(.timeline-gap)::after { top: 22px; right: 22px; } .timeline-gap { padding-left: 14px; } .timeline-gap::before { left: -35px; } li p { font-size: 18px; } }
   </style>
 </head>
 <body>
   <main>
     <header>
+      <p class="eyebrow">TAIWAN · TAINAN / 02 DAYS</p>
       <h1>包包台南小旅行</h1>
+      <p class="header-note">巷弄散步、在地好味與慢步調的兩日旅程</p>
     </header>
     <section class="preparation" aria-labelledby="trip-reminders">
       <h2 id="trip-reminders">行前準備</h2>
@@ -53,7 +61,7 @@
     </section>
     <p class="notice">行程草稿：時間、店名、地點與天氣皆為示意，正式安排待確認。</p>
     <section aria-labelledby="day-one">
-      <h2 id="day-one">第一天</h2>
+      <div class="day-heading"><span class="day-number" aria-hidden="true">DAY 01</span><h2 id="day-one">第一天</h2></div>
       <p class="subtitle">早餐出發 → 老街散步 → 午後休息 → 晚餐入住</p>
       <ol>
         <li>
@@ -82,7 +90,7 @@
       </ol>
     </section>
     <section aria-labelledby="day-two">
-      <h2 id="day-two">第二天</h2>
+      <div class="day-heading"><span class="day-number" aria-hidden="true">DAY 02</span><h2 id="day-two">第二天</h2></div>
       <p class="subtitle">悠閒早餐 → 街區走逛 → 午餐 → 伴手禮返程</p>
       <ol>
         <li>
