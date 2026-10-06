@@ -49,7 +49,32 @@
     time { display: inline-block; padding: 2px 9px; border-radius: 999px; background: #f5ece5; color: #984a35; font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: .03em; }
     h3 { margin: 9px 36px 5px 0; font-size: clamp(21px, 5.8vw, 27px); line-height: 1.4; font-weight: 650; letter-spacing: -.035em; }
     li p { margin: 0; color: #62645e; font-size: 16px; line-height: 1.6; }
-    footer { margin-top: 38px; padding: 20px 2px 0; border-top: 1px solid #ded7cb; color: #77766f; font-size: 15px; }
+  footer { margin-top: 38px; padding: 22px 24px; border: 1px solid #d8e9f3; border-top: 4px solid #2b87b6; border-radius: 10px 26px; background: linear-gradient(135deg, #eaf6fb 0%, #fff 100%); color: #22678a; font-size: 15px; }
+  footer a { color: #145c84; font-weight: 600; }
+
+  /* Doraemon-inspired palette: sky blue, clean white, and red accents. */
+  body {
+    background: linear-gradient(180deg, #e9f7ff 0%, #ffffff 45%, #f1f9ff 100%) !important;
+    background-attachment: fixed !important;
+    color: #173f63 !important;
+  }
+  h1, h2, h3 { color: #087dbb !important; }
+  a { color: #d94155 !important; }
+  button, .button, .cta, .badge, .tag {
+    border-color: #d94155 !important;
+    background-color: #d94155 !important;
+    color: #ffffff !important;
+  }
+  article, section, .card, .character-card, .profile-card, .character {
+    border-color: #cce8f7 !important;
+    background-color: #ffffff !important;
+  }
+  header, footer {
+    border-color: #b8def2 !important;
+    background: linear-gradient(135deg, #dff3ff 0%, #ffffff 100%) !important;
+  }
+  footer { color: #173f63 !important; }
+  footer a { color: #d94155 !important; }
     @media (max-width: 599px) { header.hero-cover { min-height: 270px; border-radius: 8px 26px; } .hero-copy { padding: 24px 22px; background: linear-gradient(90deg, rgb(247 245 240 / 98%) 0%, rgb(247 245 240 / 88%) 52%, rgb(247 245 240 / 38%) 80%, rgb(247 245 240 / 12%) 100%); } h1 { max-width: 76%; font-size: clamp(32px, 10vw, 44px); } .hero-cover .header-note { max-width: 78%; } }
     @media (min-width: 600px) { main { padding: 44px 34px 76px; } header.hero-cover { min-height: 360px; margin-bottom: 30px; } .hero-copy { padding: 42px 48px; } .character-overview { padding: 30px 36px; } .character-overview dl > div { display: grid; grid-template-columns: 140px 1fr; gap: 20px; padding: 17px 0; } .character-overview dd { margin: 0; font-size: 21px; } section { margin-top: 64px; } .character-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } .character-card { padding: 24px; } .character-card p { font-size: 17px; } ol { padding-left: 46px; } ol::before { left: 15px; } ol > li { padding: 24px 26px; } ol > li:not(.timeline-gap)::before { left: -39px; } ol > li:not(.timeline-gap)::after { top: 22px; right: 22px; } .timeline-gap { padding-left: 14px; } .timeline-gap::before { left: -35px; } li p { font-size: 18px; } }
   </style>
